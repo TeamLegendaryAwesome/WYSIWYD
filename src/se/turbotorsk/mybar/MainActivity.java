@@ -136,7 +136,7 @@ public class MainActivity extends FragmentActivity {
         		startActivity(new Intent(this, Add_Ingredient_Activity.class));
         		return true;
         	case R.id.menu_about:
-        		startActivity(new Intent(this, About_Activity.class));
+        		AboutBox.Show(MainActivity.this);
         		return true;
         	default:
         		return true;

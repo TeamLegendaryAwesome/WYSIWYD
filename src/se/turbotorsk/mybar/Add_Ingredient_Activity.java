@@ -1,19 +1,25 @@
 package se.turbotorsk.mybar;
 
-import android.app.Activity;
-import android.app.SearchManager;
-import android.content.Context;
+import se.turbotorsk.mybar.R;
+import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
-import android.widget.SearchView;
+import android.widget.ListView;
 
-public class Add_Ingredient_Activity extends Activity {
+public class Add_Ingredient_Activity extends ListActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.view_add_ingredient);
+        String[] coffeeChoices = this.getResources().getStringArray(R.array.drinkList);
+	    ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, coffeeChoices);
+	    setListAdapter(adapter);  //Provided by the ListActivity extension
+        
+
+        
+        
         
        /* SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         SearchView searchView = (SearchView) findViewById(R.id.searchView1);

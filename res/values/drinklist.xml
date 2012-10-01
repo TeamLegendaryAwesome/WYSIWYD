@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string-array name="drinkList">
+    <item>Cuba Libre</item>
+    <item>Cosmopolitan</item>
+    <item>Old Fashioned</item>
+    <item>P2</item>
+    <item>Whiskey Sours</item>
+    <item>Jäger Bomb</item>
+    <item>Blowjob</item>
+    <item>Black Russian</item>
+  </string-array>
+</resources>
