@@ -9,4 +9,9 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_testactivity">Testactivity</string>
 
+    <drawable name="test">#444</drawable>
+
+    <string name="title_activity_android_list_view">AndroidListViewActivity</string>
+    <string name="title_activity_drink_list_view">DrinkListView</string>
+
 </resources>

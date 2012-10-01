@@ -3,48 +3,33 @@
     android:id="@+id/GridLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:columnCount="1" >
-
+    android:columnCount="4" >
+
     <Button
         android:id="@+id/button1"
         android:layout_column="0"
-        android:layout_gravity="center_horizontal"
+        android:layout_columnSpan="4"
+        android:layout_gravity="top|center_horizontal"
         android:layout_row="1"
         android:onClick="knapptryck"
         android:text="Onödig knapp" />
-
+
     <Button
         android:id="@+id/button2"
         style="?android:attr/buttonStyleSmall"
-        android:layout_column="0"
-        android:layout_gravity="center_horizontal"
+        android:layout_column="3"
+        android:layout_gravity="top|center_horizontal"
         android:layout_row="2"
         android:onClick="knapp2happening"
         android:text="Onödig knapp 2" />
-
-    <Space
-        android:layout_width="100dp"
-        android:layout_column="0"
-        android:layout_row="3" />
-
+
     <Button
         android:id="@+id/button3"
-        android:layout_column="0"
-        android:layout_gravity="center_horizontal"
-        android:layout_row="5"
-        android:text="Knapp 3 - Byt activity" 
-        android:onClick="knapp3klick"/>
-
-    <Space
-        android:layout_width="1dp"
-        android:layout_height="24dp"
-        android:layout_column="0"
-        android:layout_row="4" />
-
-    <Space
-        android:layout_width="100dp"
-        android:layout_height="251dp"
-        android:layout_column="0"
-        android:layout_row="5" />
+        android:layout_column="1"
+        android:layout_columnSpan="3"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_row="3"
+        android:onClick="knapp3klick"
+        android:text="Knapp 3 - Byt activity" />
 
 </GridLayout>

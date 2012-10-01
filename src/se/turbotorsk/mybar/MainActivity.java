@@ -42,6 +42,9 @@ public class MainActivity extends FragmentActivity {
      * The {@link ViewPager} that will host the section contents.
      */
     ViewPager mViewPager;
+    
+    //TEST AC
+    private ListView listView1;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -51,13 +54,11 @@ public class MainActivity extends FragmentActivity {
         // of the app.
         mSectionsPagerAdapter = new SectionsPagerAdapter();
 
-
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.pager);
         mViewPager.setAdapter(mSectionsPagerAdapter);
         mViewPager.setCurrentItem(1);
         
-     
     }
 
     @Override
@@ -145,7 +146,7 @@ public class MainActivity extends FragmentActivity {
    	}
     
     public void knapp2happening(View view){
-    	Intent intent = new Intent(this, Testactivity.class);
+    	Intent intent = new Intent(this, DrinkListView.class);
     	startActivity(intent);
     }
     
