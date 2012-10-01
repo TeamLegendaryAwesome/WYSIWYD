@@ -3,20 +3,28 @@ package se.turbotorsk.mybar;
 //import android.app.ActionBar;
 //import android.app.FragmentTransaction;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
-//import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-//import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-//import android.support.v4.app.NavUtils;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-//import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
-//import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
+//import android.support.v4.app.Fragment;
+//import android.support.v4.app.FragmentManager;
+//import android.support.v4.app.NavUtils;
+//import android.view.Gravity;
+//import android.view.MenuItem;
 //import android.view.ViewGroup;
 //import android.widget.TextView;
 
@@ -49,8 +57,7 @@ public class MainActivity extends FragmentActivity {
         mViewPager.setAdapter(mSectionsPagerAdapter);
         mViewPager.setCurrentItem(1);
         
-        
-
+     
     }
 
     @Override
@@ -120,5 +127,32 @@ public class MainActivity extends FragmentActivity {
         }
 
     }
+    
+    public void knapptryck(View view){
+    	//här ska jag testa lite saker. AC
+    	//Intent intent = new Intent(this, activity_testactivity.class);
+    	//startActivity(intent);
+    	
+    	Button button = (Button) findViewById(R.id.button1);
+    	
+    	if(button.getText() == "Blä"){
+    	button.setText("Hej");
+    	}
+    	
+    	else
+    		button.setText("Blä");
+    	
+   	}
+    
+    public void knapp2happening(View view){
+    	Intent intent = new Intent(this, Testactivity.class);
+    	startActivity(intent);
+    }
+    
+    public void knapp3klick(View view){
+    	mViewPager.setCurrentItem(0);
+    }
+    
+    
      
 }
