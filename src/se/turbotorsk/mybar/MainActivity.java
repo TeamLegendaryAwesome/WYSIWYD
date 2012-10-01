@@ -2,21 +2,23 @@ package se.turbotorsk.mybar;
 
 //import android.app.ActionBar;
 //import android.app.FragmentTransaction;
+import android.app.SearchManager;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Parcelable;
-//import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-//import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-//import android.support.v4.app.NavUtils;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-//import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
-//import android.view.MenuItem;
 import android.view.View;
+import android.widget.SearchView;
+//import android.support.v4.app.Fragment;
+//import android.support.v4.app.FragmentManager;
+//import android.support.v4.app.NavUtils;
+//import android.view.Gravity;
+//import android.view.MenuItem;
 //import android.view.ViewGroup;
 //import android.widget.TextView;
 
@@ -49,6 +51,12 @@ public class MainActivity extends FragmentActivity {
         mViewPager.setAdapter(mSectionsPagerAdapter);
         mViewPager.setCurrentItem(1);
         
+     /*// Get the SearchView and set the searchable configuration
+        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        SearchView searchView = (SearchView) findItemById(R.id.searchView1);
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+        searchView.setIconifiedByDefault(false);
+       */ 
         
 
     }
