@@ -12,5 +12,12 @@
     <string name="title_activity_about_">About</string>
     <string name="about">insert about-text here</string>
     <string name="search_label">Find Recipes</string>
+    
+     <string-array name="ingredients">
+        <item>Cuba Libre</item>
+        <item>Cosmopolitan</item>
+        <item>Old Fashioned</item>
+        <item>Whiskey Sours</item>
+    </string-array>
 
 </resources>
