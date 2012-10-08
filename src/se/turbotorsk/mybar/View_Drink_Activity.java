@@ -15,6 +15,7 @@ package se.turbotorsk.mybar;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -32,6 +33,7 @@ public class View_Drink_Activity extends Activity {
 	TextView dIngredients;
 	TextView dRating;
 	ImageView dImage;
+	CheckBox dFav;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -43,6 +45,7 @@ public class View_Drink_Activity extends Activity {
         dIngredients = (TextView) findViewById(R.id.drinkIngredients);
         dRating = (TextView) findViewById(R.id.drinkRating);
         dImage = (ImageView) findViewById(R.id.drinkImage);
+        dFav = (CheckBox) findViewById(R.id.drinkFav);
         
         getDrinkInfo();
        
@@ -60,4 +63,11 @@ public class View_Drink_Activity extends Activity {
     	dImage.setImageResource(R.drawable.ic_drinkicon);
     }
     
+    public boolean getFavorite() {
+    	if( dFav.isChecked())
+    		return true;
+    		else
+    			return false;
+    }
+        
 }
