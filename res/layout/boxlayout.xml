@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:padding="10dip" >
+
+    <LinearLayout android:id="@+id/drinkpictures"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="3dip"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dip">
+ 
+        <ImageView
+            android:id="@+id/list_images"
+            android:layout_width="50dip"
+            android:layout_height="50dip"/>
+    </LinearLayout>
+    
+    
+	
+    <TextView
+        android:id="@+id/drinks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:text="@+id/drinks"
+        android:paddingLeft="32dip"
+        android:typeface="sans"
+        android:textColor="#040404"
+        android:textSize="15dip"
+        android:textStyle="bold">
+        
+    </TextView>
+    
+
+
+    <CheckedTextView
+        android:id="@+id/ingredientss"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/drinks"
+        android:layout_marginTop="-7dip"
+        android:checked="false"
+   		android:clickable="true"
+        android:text="ing1, ing2, ing3, ing4, ing5"
+        android:textColor="#10bcc9"
+        android:textSize="10dip"
+        android:drawableLeft="?android:attr/listChoiceIndicatorMultiple"
+        android:focusable="true"
+        android:onClick="toggle"
+        android:gravity="center_vertical"/>
+    
+    
+
+
+     <TextView
+         android:id="@+id/ratings"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_below="@+id/ingredientss"
+         android:paddingLeft="32dip"
+         android:layout_marginTop="-5dip"
+         android:layout_marginRight="5dip"
+         android:gravity="left"
+         android:text="4/5"
+         android:textColor="#343434"
+         android:textSize="10dip"
+         android:textStyle="bold" />
+    
+</RelativeLayout>

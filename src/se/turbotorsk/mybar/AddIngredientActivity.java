@@ -5,12 +5,12 @@ mybar@turbotorsk.se
 
 Redistribution and use in source and binary forms, with or without modification,
  are permitted provided that the following conditions are met:
-*	Redistributions of source code must retain the above copyright notice,
+ *	Redistributions of source code must retain the above copyright notice,
  	this list of conditions and the following disclaimer.
-*	Redistributions in binary form must reproduce the above copyright notice,
+ *	Redistributions in binary form must reproduce the above copyright notice,
  	this list of conditions and the following disclaimer in the documentation
  	and/or other materials provided with the distribution.
-*	Neither the name of the MyBar nor the names of its contributors may be 
+ *	Neither the name of the MyBar nor the names of its contributors may be 
 	used to endorse or promote products derived from this software without
 	specific prior written permission.
 	
@@ -29,11 +29,10 @@ OF THE POSSIBILITY OF SUCH DAMAGE.
 package se.turbotorsk.mybar;
 
 import se.turbotorsk.mybar.controller.Controller;
-import se.turbotorsk.mybar.model.Ingredient;
 import android.app.ListActivity;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckedTextView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -41,50 +40,34 @@ import android.widget.TextView;
  * This activity handles the functions that add ingredients.
  */
 public class AddIngredientActivity extends ListActivity {
-	
-	private TextView text;
-	private IngredientAdapter adapter;
+
+	private MyBarAdapter adapter;
 	public static int save = -1;
-	
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setText((TextView) findViewById(R.id.drink));
-		adapter = new IngredientAdapter(this, R.layout.rowlayout,
+
+		adapter = new MyBarAdapter(this, R.layout.boxlayout,
 				Controller.getAllIngredients());
 
 		setListAdapter(adapter);
-
 	}
 
 	@Override
-	public void onListItemClick(ListView parent, View v, int position, long id) { 
+	public void onListItemClick(ListView parent, View v, int position, long id) {
 
-		{
-			if(save != position && parent.getChildAt(position) != null && !(Controller.isInMyBar(adapter.getId(position))))
-			{
-		    adapter.setBackgroundBlue(position, v);
- 		    Controller.addMyBarIngredient(adapter.getId(position));
-		    save = position;
-			}
-			
-			else if(parent.getChildAt(position) != null)
-			{
-			adapter.setBackgroundWhite(position, v);
-			Controller.removeMyBarIngredient(adapter.getId(position), adapter.getPosition(position));		
-			save = -1;
-			}	
+		CheckedTextView text = ((CheckedTextView) findViewById(R.id.ingredientss));
+
+		if (!(text.isChecked())) {
+			Controller.addMyBarIngredient(adapter.getId(position));
+			text.toggle();
+		}
+
+		else {
+			Controller.removeMyBarIngredient(adapter.getId(position),
+					adapter.getPosition(position));
+			text.toggle();
 		}
 	}
-
-	//Needed according to sonar, feels a bit weird. Might remove?
-	public TextView getText() {
-		return text;
-	}
-
-	public void setText(TextView text) {
-		this.text = text;
-	}
 }
-
-
