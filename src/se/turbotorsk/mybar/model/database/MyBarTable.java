@@ -38,9 +38,9 @@ import android.util.Log;
  * @author Mathias Karlgren (<a
  *         href="mailto:***REMOVED***">email</a>)
  */
-public class MyBarTable {
+public final class MyBarTable {
 	// Hide Utility Class Constructor.
-	private MyBarTable() throws UnsupportedOperationException {
+	private MyBarTable() {
 	};
 
 	// Database table template.
