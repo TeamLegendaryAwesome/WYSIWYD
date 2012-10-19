@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Window;
+import android.widget.Toast;
 
 
 public class Splash extends Activity {
@@ -23,7 +24,12 @@ public class Splash extends Activity {
         	public void run() {
         		Controller.deleteTables();
         		Controller.dataSync();
-        		Intent intent = new Intent(Splash.this,MainActivity.class);
+        		
+        		if(true){ //Ska vara if connected
+        		Toast.makeText(getApplicationContext(), "Test", Toast.LENGTH_SHORT).show();
+        		}
+        		
+        		Intent intent = new Intent(Splash.this, MainActivity.class);
                 Splash.this.startActivity(intent);
         		Splash.this.finish();
             }
